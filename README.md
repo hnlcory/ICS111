@@ -1,2 +1,2 @@
 # ICS111
-ICS111 Projects
+ICS111 Java Projects
