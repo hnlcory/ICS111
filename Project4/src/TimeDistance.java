@@ -60,7 +60,7 @@ public class TimeDistance {
 			AnswerH = (disInp / Speed)-((disInp / Speed)%1);
 			break;
 		}
-		if (AnswerM <=9 && AnswerM >=1) {// probably a not so efficient way to seperate and change something like "11:1" to "11:01" but it works and I couldn't figure out something else. its been 6 hours send help
+		if (AnswerM <=9 && AnswerM >=1) {// probably a not so efficient way to seperate and change outputs such as "11:1" to "11:01" but it works and I couldn't figure out something else. its been 6 hours send help
 			String output= String.format("It takes %.0f:0%.0f to go "+disInp+" miles at "+Speed+" mph", AnswerH, AnswerM);
 			System.out.println(output);
 		}
