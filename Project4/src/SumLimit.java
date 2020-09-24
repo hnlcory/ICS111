@@ -29,7 +29,9 @@ public class SumLimit {
 	        for (int i = 0; i < runCount; i++) {
 	            System.out.print(x);
 	            x=x+1;
-	            System.out.print("+");	
+	            if(i!=runCount-1){
+	                System.out.print("+");
+	              }
 	            
         
 	        }
