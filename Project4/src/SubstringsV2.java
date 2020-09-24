@@ -1,3 +1,4 @@
+//Lesson Demo
 import java.util.Scanner;
 import java.lang.Math;
 public class SubstringsV2 {
@@ -112,6 +113,7 @@ public class SubstringsV2 {
 	public static void switchvsif(){
 		Scanner scan=new Scanner(System.in);
 		int input=scan.nextInt();
+		scan.close();
 		if(input==1){
 			System.out.println("one");	
 		}else if(input==2){
