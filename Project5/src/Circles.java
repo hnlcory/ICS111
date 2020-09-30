@@ -1,15 +1,37 @@
+//NOT FINAL
 //chapter 4.3
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JFrame;
+import java.util.Random;
 
 public class Circles {
 
-  public static void draw(Graphics g)
-  {
-    g.setColor(Color.MAGENTA);
-    g.fillOval(10, 10, 40, 40);
-    // your code goes here
+  public static void draw(Graphics g){
+	
+	g.setColor(Color.MAGENTA); //for oval in top 
+	g.fillOval(10, 10, 40, 40); //x,y chord , size, size
+	
+	
+	
+	Random rand=new Random();
+	
+   
+	// your code goes here
+    int count=1;
+    while (count < 10) {
+    	for(int x=0;x<400;x+=40){
+    		for(int y=0;y<400;y+=40){
+    		Color color=new Color(rand.nextFloat(),rand.nextFloat(),rand.nextFloat());
+    		g.setColor(color);
+    		g.fillOval(x,y,10,10);
+    		count++;
+    		}
+  
+    		
+    	}
+    }
+ 
 
   }
 
