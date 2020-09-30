@@ -1,3 +1,4 @@
+//chapter 4.3
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JFrame;
@@ -7,7 +8,7 @@ public class Circles {
   public static void draw(Graphics g)
   {
     g.setColor(Color.MAGENTA);
-    g.fillOval(100, 10, 40, 40);
+    g.fillOval(10, 10, 40, 40);
     // your code goes here
 
   }
