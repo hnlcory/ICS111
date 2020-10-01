@@ -9,34 +9,29 @@ public class Circles {
   public static void draw(Graphics g)
   {
     g.setColor(Color.MAGENTA);
-    g.fillOval(10, 10, 40, 40);
+    g.fillOval(10, 10, 40, 40);//Big Oval
     // your code goes here
-    Random random = new Random();
+    Random ranColor = new Random();
     
-    int y = 0;
-    for (int r=0; r<10; r++) {
-    	int x =0;
+    int yAxis = 0;
+    
+    for (int i=0; i<10; i++) {//row
     	
-    	int c =0; //colum
+    	int column =0; //column
+    	int xAxis =0;
     	
-    	if (r<2) {
-    		x=80;
-    		c=2;
+    	if (i<2) {//stop circles form bring drawn top left,continue
+    		column=2;
+    		xAxis=80;
     	}
     	
-    	
-    	for(; c <10; c++) {
-    		Color colorNew= new Color(random.nextFloat(), random.nextFloat(), random.nextFloat());
-    		
-    		//sets colors for small circle
-    		g.setColor(colorNew);
-    		// draw circles
-    		g.fillOval(x, y, 10, 10);
-    		
-    		//incrament x values to add circle for x pos
-    		x+=40;	
+    	for(; column <10; column++) {//circles created in 10
+    		Color finalColor= new Color(ranColor.nextFloat(), ranColor.nextFloat(), ranColor.nextFloat());//rgb new random color type
+    		g.setColor(finalColor);//Small Ovals
+    		g.fillOval(xAxis, yAxis, 10, 10);//pos, pos,size,size
+    		xAxis= xAxis+40;//add 40 for x to make new circles even left,right
     	}
-    	y+=40;
+    	yAxis= yAxis+40;//add 40 for y to make circle even up,down
     }
   }
 

@@ -1,5 +1,5 @@
 //Cory Parker Section 5
-//TODO -check for 0 balance and undo last cycle,
+//TODO -check for 0 balance, format
 import java.util.Scanner;
 import java.text.DecimalFormat;
 

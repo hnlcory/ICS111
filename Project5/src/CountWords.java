@@ -3,8 +3,17 @@ import java.util.Scanner;
 public class CountWords {
 	
 	public static int countWords(String str) {
-		String strT = str.trim();//remove spaces in front and end - add if count contains just blank here?
+		
+		String strT = str.trim();//remove spaces in front and end - add if count contains just blank after?
+		if (strT.equals(" ")) {
+			int count =0;
+			
+		}
+		else {
+			
+		}
 		int count = strT.split("\\s+").length;//splits string, then length of the spaces in words
+		
 		System.out.println("your string has " +count+" words and "+strT.length()+" characters");//string count and length
 		return count;
 	}
