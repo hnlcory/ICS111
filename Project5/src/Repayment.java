@@ -21,6 +21,11 @@ public class Repayment {
 			double intPYear = 1+(1*(interestRate/100));
 			oldBalance = oldBalance*intPYear;
 
+			if (oldBalance <= 0) {
+				System.out.println(count+"  0.00");
+				break;
+			}
+			
 			DecimalFormat df = new DecimalFormat("#.00");
 			String formatted = df.format(oldBalance); 
 			
@@ -29,7 +34,7 @@ public class Repayment {
 			
 			
 		}
-		 System.out.println(oldBalance);
+		 //System.out.println(oldBalance);
 		 return oldBalance;
 		
 	}
