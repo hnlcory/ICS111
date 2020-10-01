@@ -1,2 +1,2 @@
 # ICS111
-Projects related to ICS 111
+ICS 111 Java Projects
