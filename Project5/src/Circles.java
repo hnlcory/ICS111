@@ -1,4 +1,5 @@
-//Cory Parker Section 5
+//Cory Parker Section 5 - note: 10th row shows up somewhat out of bottom fame
+//TODO 
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JFrame;
