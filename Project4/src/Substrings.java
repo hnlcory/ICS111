@@ -1,4 +1,4 @@
-// Cory Parker Section 5
+// Cory Parker Section 5 -
 import javax.swing.JOptionPane;
 public class Substrings {
 
