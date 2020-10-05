@@ -9,13 +9,13 @@ public class AllSubstrings {
 	        for (int i = 0; i < str.length(); i++) {
 	        	
 	            for (int c = i+1; c <= str.length(); c++) {
-	                System.out.print("\""+str.substring(i, c));
+	                System.out.print("\""+str.substring(i, c));//substring start, end spot
 	                count++;
 	                if (count==c) {
 	                	break;
 	                }
 	                else {
-	                	if (count+1==c) {
+	                	if (count+1==c) {//doesnt seem to reach here - should counteract the last ,
 	                		System.out.print("\"");
 	                		break;
 	                	}
