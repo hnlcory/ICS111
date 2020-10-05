@@ -1,4 +1,4 @@
-//Cory Parker Section 5 -
+//Cory Parker Section 5 
 import java.util.Scanner;
 public class AllSubstrings {
 
@@ -15,7 +15,7 @@ public class AllSubstrings {
 	                	break;
 	                }
 	                else {
-	                	if (count+1==c) {//doesnt seem to reach here - should counteract the last ,
+	                	if (count+1==i) {//doesnt seem to reach here - should counteract the last ,
 	                		System.out.print("\"");
 	                		break;
 	                	}
@@ -28,9 +28,9 @@ public class AllSubstrings {
 	        }
 	}
 	public static void main(String[] args) {
-		System.out.println("enter a string:");
+		Scanner strI = new Scanner(System.in);
 		while (true) {
-			Scanner strI = new Scanner(System.in);
+			System.out.println("enter a string:");//doesnt print on a new line the 2nd time	
 			String strImp = strI.nextLine();
 			if (strImp.equals("done")) {
 				strI.close();
