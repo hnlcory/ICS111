@@ -10,12 +10,7 @@ public class AllSubstrings {
 	        	
 	            for (int c = i+1; c <= str.length(); c++) {
 	                System.out.print("\""+str.substring(i, c));//substring start, end spot
-	                count++;
-	                if (count==c) {
-	                	break;
-	                }
-	                else {
-	                	if (count==c && str.length()==1) {//doesnt seem to reach here - should counteract the last , use string length
+	                	if (i+1== str.length()) {
 	                		System.out.print("\"");
 	                		break;
 	                	}
@@ -23,7 +18,7 @@ public class AllSubstrings {
 	                		System.out.print("\"");
 	                		System.out.print(", ");
 	                	}
-	                }
+	                
 	            }
 	            
 	        }
