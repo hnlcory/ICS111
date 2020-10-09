@@ -15,7 +15,7 @@ public class AllSubstrings {
 	                	break;
 	                }
 	                else {
-	                	if (count+1==i) {//doesnt seem to reach here - should counteract the last ,
+	                	if (count==c && str.length()==1) {//doesnt seem to reach here - should counteract the last , use string length
 	                		System.out.print("\"");
 	                		break;
 	                	}
@@ -25,12 +25,15 @@ public class AllSubstrings {
 	                	}
 	                }
 	            }
+	            
 	        }
+	        System.out.println(" ");
 	}
 	public static void main(String[] args) {
 		Scanner strI = new Scanner(System.in);
+		
 		while (true) {
-			System.out.println("enter a string:");//doesnt print on a new line the 2nd time	
+			System.out.print("enter a string:");
 			String strImp = strI.nextLine();
 			if (strImp.equals("done")) {
 				strI.close();
