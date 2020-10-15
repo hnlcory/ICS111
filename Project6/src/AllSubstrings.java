@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class AllSubstrings {
 
 	public static void printSubstrings(String str) {
-		int count=1;
 		 System.out.print("The substrings of "+str+" are ");//print structure
          
 	        for (int i = 0; i < str.length(); i++) {// iteration of loop
