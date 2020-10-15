@@ -1,5 +1,5 @@
 //Cory Parker Section 5
-import java.util.Arrays;
+//import java.util.Arrays;
 
 public class RandomStats {
 	
@@ -9,7 +9,7 @@ public class RandomStats {
 		for (int i=0;i<1000;i++) {
 			array[i] = Math.random();
 		}
-		System.out.println(Arrays.toString(array));
+		//System.out.println(Arrays.toString(array));
 		return;
 	}
 
