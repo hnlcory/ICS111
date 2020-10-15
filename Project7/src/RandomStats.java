@@ -3,11 +3,11 @@
 
 public class RandomStats {
 	
-	static Double[] array1 = new Double[1000];
+	static Double[] array1 = new Double[1000];//create array to access
 	
 	public static void fillArray(Double[] array) {
 		for (int i=0;i<1000;i++) {
-			array[i] = Math.random();
+			array[i] = Math.random();//input random numbers between 0 and 1 in each array slot
 		}
 		//System.out.println(Arrays.toString(array));
 		return;
@@ -16,20 +16,20 @@ public class RandomStats {
 	
 	public static void computeArray(Double[] array) {
 		Double total = 0.0,min=array[0],max=0.0;
-	//total value of all the elements of the array, the mean, the minimum, and the maximum.
-		for (double number: array) {
+	
+		for (double number: array) {//for every double in array
 			total = total + number;
-			if(number > max) {
+			if(number > max) {//finding new max
 				max = number;
 			}
-			else if(number < min) {
+			else if(number < min) {//finding new min
 				min = number;
 			}
 			
 		}
 		
-		System.out.println("Total: "+total);
-		System.out.println("Mean: "+total/1000);
+		System.out.println("Total: "+total); //total value of all the elements of the array, the mean, the minimum, and the maximum.
+		System.out.println("Mean: "+total/1000);//mean is total divided by array size
 		System.out.println("Min: "+min);
 		System.out.println("Max: "+max);
 		return;
