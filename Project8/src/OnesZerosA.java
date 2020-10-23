@@ -66,9 +66,7 @@ public class OnesZerosA {
 			    System.out.println("Not a number found");
 			    System.exit(1);
 			}
-			else {
-				
-			}
+			
 		}
 				
 		for (String element: array) {

@@ -77,35 +77,34 @@ public class OnesZerosB {
 		s2.close();
 		//System.out.println(dataFromFile);
 		
-		for (int z = 0; z < dataFromFile.size(); z++) {//test printing
+		for (int z = 0; z < dataFromFile.size(); z++) {//test printing - moves to end at finish
 			System.out.println(dataFromFile.get(z).toString().replace("[", "").replace("]", "").replace(",","").replace(" ",""));
 			//System.out.println(dataFromFile.get(z));
 		}
 		
-		/**
-		System.out.println(lineCount);
-		System.out.println(Arrays.toString(array));
-		chars = array[1].length();//character length 
+		
+	
+		chars = dataFromFile.size();//character length 
 		System.out.println(chars);
 		
 		for (int j = 0; j < lineCount; j++) {//line length check
-			if(array[j].length() != chars) {
+			/**
+			if(dataFromFile[j].length() != chars) {
 				System.out.println("Length mismatch");
 				System.exit(1);
 			}
-			else if(!array[j].matches("[10]*")) {
+			**/
+			
+			//works but the array already gets rid of non int numbers so check must be earler on
+			if(!dataFromFile.get(j).toString().replace("[", "").replace("]", "").replace(",","").replace(" ","").matches("[10]*")) {
 			    System.out.println("Not a number found");
 			    System.exit(1);
 			}
-			else {
-				
-			}
+			
 		}
 				
-		for (String element: array) {
-            System.out.println(element);
-        }
-		**/
+		
+		
 	}
 
 }
