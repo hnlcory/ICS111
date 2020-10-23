@@ -43,7 +43,7 @@ public class OnesZerosA {
 		
 		
 		String[] array = new String[lineCount];//array creation
-		System.out.println(Arrays.toString(array));
+		//System.out.println(Arrays.toString(array));
 		while (s2.hasNext()) {
 			
 			array[i]=s2.nextLine();
@@ -52,10 +52,10 @@ public class OnesZerosA {
 			
 		}
 		s2.close();
-		System.out.println(lineCount);
-		System.out.println(Arrays.toString(array));
+		//System.out.println(lineCount);
+		//System.out.println(Arrays.toString(array));
 		chars = array[1].length();//character length 
-		System.out.println(chars);
+		//System.out.println(chars);
 		
 		for (int j = 0; j < lineCount; j++) {//line length check
 			if(array[j].length() != chars) {
