@@ -64,7 +64,7 @@ public class OnesZerosB {
 			while(time<25) {//should mean that the char at goes for the length of the row then next line
 				char ch = tempData.charAt(i);//its going diagonal, each time it gets next line, and counts over 1
 				int tempDataI =Integer.parseInt(String.valueOf(ch));
-				System.out.println(ch);
+				//System.out.println(ch);
 				numArray.add(tempDataI);
 				i++;
 				time++;
@@ -75,15 +75,12 @@ public class OnesZerosB {
 			
 		}
 		s2.close();
-		System.out.println(dataFromFile);
+		//System.out.println(dataFromFile);
 		
-		Integer[] array = dataFromFile.toArray(new Integer[0]);
-		
-		for (String element: array) {//test printing
-            System.out.println(element);
-        }
-			
-		
+		for (int z = 0; z < dataFromFile.size(); z++) {//test printing
+			System.out.println(dataFromFile.get(z).toString().replace("[", "").replace("]", "").replace(",","").replace(" ",""));
+			//System.out.println(dataFromFile.get(z));
+		}
 		
 		/**
 		System.out.println(lineCount);
