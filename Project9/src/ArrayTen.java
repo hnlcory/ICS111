@@ -1,3 +1,4 @@
+//Cory Parker - Section5
 public class ArrayTen {
 
   private String myData[] = new String[10];
