@@ -9,7 +9,11 @@ public class Median {
 
 	public static ArrayList<Integer> arrList = new ArrayList<Integer>();
 	
-	
+	 private static double computeMedian(ArrayList<Integer> numbers) {
+		 //median
+		 double temp = 0.0;
+		 return temp;
+	 }
 		
 	public static void main(String[] args) {
 		int argcount=0;
@@ -45,7 +49,7 @@ public class Median {
 				
 			}
 			System.out.println(arrList);
-			
+			computeMedian(arrList);
 		
 		//read file  args #
 		//parse as integers to arraylist #
