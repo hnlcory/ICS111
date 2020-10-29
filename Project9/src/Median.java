@@ -14,7 +14,7 @@ public class Median {
 		 int same=0,lower=0,higher=0,count=0;
 		 
 		 //loop to check for < > or =
-		 while (arrList.size()>count) {//temp fix to put -1 of arraylist size
+		 while (arrList.size()-1>count) {//temp fix to put -1 of arraylist size
 			if(arrList.get(curNum) > arrList.get(count)) {//if number being compared is > than arraylist x
 				lower++;
 			}
@@ -42,6 +42,8 @@ public class Median {
 		 return temp;
 	 }
 		
+	 
+	 
 	public static void main(String[] args) {
 		int argcount=0;
 		if(args.length==0) {//args check
@@ -67,16 +69,16 @@ public class Median {
 			
 			while (s.hasNext()) {//parse int into arraylist
 				String curLine = s.nextLine();
-				System.out.println(curLine);
+				//System.out.println(curLine);
 				String [] values=curLine.split(",");
 				for(String value: values) {
-					System.out.println(Integer.parseInt(value));
+					//System.out.println(Integer.parseInt(value));
 					arrList.add(Integer.parseInt(value));
 				}
 				
 			}
-			System.out.println(arrList);
-			computeMedian(arrList);
+			
+			//add compute median here if its multiple arrays
 		
 		//read file  args #
 		//parse as integers to arraylist #
@@ -85,7 +87,8 @@ public class Median {
 		
 			argcount++;
 		}//end of while loop
-		
+		System.out.println(arrList);
+		computeMedian(arrList);
 	}
 
 }
