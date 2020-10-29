@@ -11,21 +11,25 @@ public class Median {
 	public static Integer curNum=0;
 	
 	 private static double computeMedian(ArrayList<Integer> numbers) {
-		 int same=0,lower=0,higher=0,count=0;
+		 int same=0,lower=0,higher=0,median=0;
 		 
-		 //loop to check for < > or =
-		 while (arrList.size()-1>count) {//temp fix to put -1 of arraylist size
-			if(arrList.get(curNum) > arrList.get(count)) {//if number being compared is > than arraylist x
-				lower++;
-			}
-			else if (arrList.get(curNum) < arrList.get(count)) {
-				higher++;
-			}
-			else if (arrList.get(curNum) == arrList.get(count)) {
-				same++;
-			}
-			 count++;
+		 
+		 for (int x=0; x<arrList.size();x++) {
+			 if (arrList.get(x)==arrList.size()) {
+					break;
+				}
+				else if(arrList.get(curNum) > arrList.get(x)) {//if number being compared is > than arraylist x
+					lower++;
+				}
+				else if (arrList.get(curNum) < arrList.get(x)) {
+					higher++;
+				}
+				else if (arrList.get(curNum) == arrList.get(x)) {
+					same++;
+				}
 		 }
+		 
+		
 		 
 		 if(lower+same>higher && lower<same+higher) { // need even and odd check -possily same-1 since it counts istelf
 			 System.out.println("median: "+arrList.get(curNum));
