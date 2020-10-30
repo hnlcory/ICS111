@@ -14,13 +14,26 @@ public class ArrayTen {
   }
 
   public String get(int index) {
-    return myData[index];
+	try {
+	return myData[index];
+	}
+	catch(ArrayIndexOutOfBoundsException e){
+		System.out.println("exception java.lang.IndexOutOfBoundsException");
+		throw new IndexOutOfBoundsException();
+	}
+
   }
 
   public static void main(String[] args) {
-    ArrayTen a = new ArrayTen();
+	try {
+	ArrayTen a = new ArrayTen();
     a.set(10, "hello world");
     System.out.println (a.get(10));
+	}
+	catch(IndexOutOfBoundsException e) {
+		e.printStackTrace();
+		
+	}
   }
 
 }
