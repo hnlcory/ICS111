@@ -30,11 +30,17 @@ public class Median {
 		 }
 
 		 if(lower+same>higher && lower<same+higher) { // need even and odd check -possily same-1 since it counts istelf
-			 median1=arrList.get(curNum);			
+			 median1=arrList.get(curNum);	
+			 medianF=Double.valueOf(median1);
+			 System.out.println("median: "+medianF);
+			 
 		 }		
 		 else if(lower+same==higher || lower==same+higher) {//1 of 2 medians	 
 			 median1=arrList.get(curNum);		 
 			 compute2ndMedian(arrList);
+			 medianF = (Double.valueOf(median1)+Double.valueOf(median2))/2;
+			 System.out.println("median: "+medianF);
+			 
 			//find next one
 		 } 
 		 else {
@@ -42,9 +48,7 @@ public class Median {
 			 computeMedian(arrList);
 		 }	 
 		 //code returns to print out final median
-		 medianF = (Double.valueOf(median1)+Double.valueOf(median2))/2;
-		 System.out.println("median: "+medianF);
-		 return medianF;
+		return medianF;
 	 }
 		
 	 
@@ -96,7 +100,7 @@ public class Median {
 				s = new Scanner(fread);
 			}
 			catch(FileNotFoundException e){
-				System.out.println("file not found");
+				System.out.println("file(s) not found");
 				System.exit(1);
 			}
 			
