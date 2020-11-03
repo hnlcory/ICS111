@@ -1,7 +1,7 @@
 import java.util.NoSuchElementException;
 import java.util.ArrayList;
 // Cory Parker Section 5
-public class Contact {
+public class TestContact {
 
 	ArrayList <String> contactInfoAL = new ArrayList<String>();
 	private String name;
@@ -42,7 +42,7 @@ public class Contact {
 	}
 	
 	
-	public String[] getContactInformation() {
+	public String[] getContactInformation() {//***throws error
 	//returns an array of all the contact information items added so far
 	Object[] contactInfoA = contactInfoAL.toArray(); 
 	for (Object obj : contactInfoA) { 
@@ -55,6 +55,17 @@ public class Contact {
 	//returns a string containing the values of all the instance variables
 		return (name + contactInfoAL);
 			
+	}
+	public static void main(String[] args){
+		String sampleContactInfo = "ewa beach name@gmail.com";
+		String sampleName = "Cory";
+		TestContact tc1 = new TestContact();
+		tc1.addContactInformation(sampleContactInfo);
+		tc1.saveName(sampleName);//** returns null for some reason
+		//tc1.nameMatches(search); //***confused on imput?
+		tc1.getName();
+		tc1.getContactInformation();
+		//tc1.customException();
 	}
 	
 }
