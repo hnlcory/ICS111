@@ -14,7 +14,7 @@ public class TestContact {
 	
 	public String saveName(String contactName) {
 	//a constructor with a single String parameter, which saves that string as the name of the contact
-		contactName = name;
+		name = contactName;
 		return contactName;		
 		}
 	
@@ -57,11 +57,11 @@ public class TestContact {
 			
 	}
 	public static void main(String[] args){
-		String sampleContactInfo = "ewa beach name@gmail.com";
+		String sampleContactInfo = "name@gmail.com";
 		String sampleName = "Cory";
 		TestContact tc1 = new TestContact();
 		tc1.addContactInformation(sampleContactInfo);
-		tc1.saveName(sampleName);//** returns null for some reason
+		tc1.saveName(sampleName);
 		//tc1.nameMatches(search); //***confused on imput?
 		tc1.getName();
 		tc1.getContactInformation();
