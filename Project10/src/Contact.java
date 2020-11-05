@@ -6,7 +6,7 @@ public class Contact {
 	ArrayList <String> contactInfoAL = new ArrayList<String>();
 	private String name;
 	
-	public static void customException(){
+	public void customException(){
 	// a no-arguments constructor, which if invoked throws NoSuchElementException
 		throw new NoSuchElementException();
 	}
@@ -21,7 +21,6 @@ public class Contact {
 	
 	public String getName() {
 	//String getName(), which returns the name
-		System.out.println(name);
 		return name;	
 	}
 	
@@ -42,14 +41,18 @@ public class Contact {
 	}
 	
 	
-	public String[] getContactInformation() {
-	//returns an array of all the contact information items added so far
-	Object[] contactInfoA = contactInfoAL.toArray(); 
-	for (Object obj : contactInfoA) { 
-        System.out.print(obj + " ");
+	public String[] getContactInformation() {//***throws error
+		//returns an array of all the contact information items added so far
+		Object[] contactInfoA = contactInfoAL.toArray(); 
+		String[] frmtContactInfo = new String[contactInfoA.length];
+	    System.arraycopy(contactInfoA, 0, frmtContactInfo, 0, contactInfoA.length);
+	    
+	    for(String string:frmtContactInfo) {
+	    	System.out.println(string);
+	    }
+	    
+		return frmtContactInfo;
 		}
-	return (String[]) contactInfoA;
-	}
 
 	public String toString() {
 	//returns a string containing the values of all the instance variables
