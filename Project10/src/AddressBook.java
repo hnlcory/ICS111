@@ -1,3 +1,6 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -71,6 +74,22 @@ public class AddressBook {
 	
 	public static void main(String[] args){
 		// file scanner part
+		FileReader fread=null;
+		Scanner fScan = null;
+		
+		try {
+			File file = new File(args[0]);
+			fread= new FileReader(file);
+			fScan = new Scanner(fread);
+		}
+		catch(FileNotFoundException e){
+			System.out.println("file not found");	
+		}
+		catch(ArrayIndexOutOfBoundsException f) {
+			System.out.println("no arguments found");
+		}
+		
+		//main menu parts
 		Scanner imputScan = new Scanner(System.in);
 		AddressBook ab1 = new AddressBook();
 		
