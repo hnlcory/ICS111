@@ -123,7 +123,7 @@ public class AddressBook {
 		//create file save
 		System.out.println("file name?");
 		String fileName= inputScan.nextLine();
-		File userFile = new File(".txt");
+		File userFile = new File("file.txt");
 		
 		try {
 			userFile.createNewFile();
