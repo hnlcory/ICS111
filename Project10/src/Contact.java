@@ -3,8 +3,12 @@ import java.util.ArrayList;
 // Cory Parker Section 5
 public class Contact {
 
-	ArrayList <String> contactInfoAL = new ArrayList<String>();
-	private String name;
+	public Contact(String string) {
+		
+	}
+	
+	public ArrayList <String> contactInfoAL = new ArrayList<String>();
+	public String name;
 	
 	public void customException(){
 	// a no-arguments constructor, which if invoked throws NoSuchElementException
@@ -14,8 +18,9 @@ public class Contact {
 	
 	public String saveName(String contactName) {
 	//a constructor with a single String parameter, which saves that string as the name of the contact
-		contactName = name;
-		return contactName;		
+		name = contactName;
+		//System.out.println("saving name: "+name);
+		return contactName;	
 		}
 	
 	
@@ -37,27 +42,35 @@ public class Contact {
 	
 	public void addContactInformation(String contactInfo) {
 	//which adds a new item of contact information
-	contactInfoAL.add(contactInfo);
+		//System.out.println("saving contact info: "+contactInfo);
+		
+		
+		contactInfoAL.add(contactInfo);
+		
 	}
 	
 	
 	public String[] getContactInformation() {//***throws error
-		//returns an array of all the contact information items added so far
-		Object[] contactInfoA = contactInfoAL.toArray(); 
-		String[] frmtContactInfo = new String[contactInfoA.length];
-	    System.arraycopy(contactInfoA, 0, frmtContactInfo, 0, contactInfoA.length);
-	    
-	    for(String string:frmtContactInfo) {
-	    	System.out.println(string);
-	    }
-	    
-		return frmtContactInfo;
-		}
+	//returns an array of all the contact information items added so far
+	Object[] contactInfoA = contactInfoAL.toArray(); 
+	String[] frmtContactInfo = new String[contactInfoA.length];
+    System.arraycopy(contactInfoA, 0, frmtContactInfo, 0, contactInfoA.length);
+    for(String string:frmtContactInfo) {
+    	System.out.println(string);
+    } 
+	return frmtContactInfo;
+	}
 
 	public String toString() {
 	//returns a string containing the values of all the instance variables
-		return (name + contactInfoAL);
-			
+		return (name +": "+ contactInfoAL.toString().replace("[", "").replace("]", ""));		
 	}
+	
+	
+	
+	
+	
+	
+	
 	
 }

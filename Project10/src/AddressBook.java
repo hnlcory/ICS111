@@ -1,76 +1,31 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 //Cory Parker Section 5
+
+
+
 public class AddressBook {
 	
+	ArrayList <Contact> allContacts = new ArrayList<Contact>();
+	
+	private static String fileFormat(Contact c) {
+		Contact c3= new Contact(null);
+		String out= c3.toString();
+		return out;
+		
+	}
+	
 	//private static Contact nextContact(Scanner in) {
-		//tries to read the next contact from the given scanner.  This method returns null if there is no next contact 
+		//tries to read the next contact from the given scanner.  This method returns null if there is no next contact
+		
 	//}
 	
-	//private static String fileFormat(Contact c) {
-		//returns a string representation of the contact for file save
-	//}
-	
-	ArrayList <String> contactInfoAL = new ArrayList<String>();
-	private String name;
-	
-	public void customException(){
-	// a no-arguments constructor, which if invoked throws NoSuchElementException
-		throw new NoSuchElementException();
-	}
-	
-	
-	public String saveName(String contactName) {
-	//a constructor with a single String parameter, which saves that string as the name of the contact
-		name = contactName;
-		System.out.println("saving name: "+name);
-		return contactName;	
-		}
-	
-	
-	public String getName() {
-	//String getName(), which returns the name
-		return name;	
-	}
-	
-	
-	public Boolean nameMatches(String search) {
-	//returns true if the lowercase version of the name contains the lowercase version of the search string
-		if(search.contains(name.toLowerCase())) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-	
-	public void addContactInformation(String contactInfo) {
-	//which adds a new item of contact information
-		System.out.println("saving contact info: "+contactInfo);
-		contactInfoAL.add(contactInfo);
-	}
-	
-	
-	public String[] getContactInformation() {//***throws error
-	//returns an array of all the contact information items added so far
-	Object[] contactInfoA = contactInfoAL.toArray(); 
-	String[] frmtContactInfo = new String[contactInfoA.length];
-    System.arraycopy(contactInfoA, 0, frmtContactInfo, 0, contactInfoA.length);
-    for(String string:frmtContactInfo) {
-    	System.out.println(string);
-    } 
-	return frmtContactInfo;
-	}
-
-	public String toString() {
-	//returns a string containing the values of all the instance variables
-		return (name + contactInfoAL);		
-	}
 	
 	public static void main(String[] args){
 		// file scanner part
@@ -83,39 +38,51 @@ public class AddressBook {
 			fScan = new Scanner(fread);
 		}
 		catch(FileNotFoundException e){
-			System.out.println("file not found");	
+				
 		}
+		
 		catch(ArrayIndexOutOfBoundsException f) {
 			System.out.println("no arguments found");
 		}
 		
 		//main menu parts
-		Scanner imputScan = new Scanner(System.in);
-		AddressBook ab1 = new AddressBook();
+		Scanner inputScan = new Scanner(System.in);
 		
+		AddressBook a1 = new AddressBook();
+		Contact c1;
+		Contact c2 = new Contact(null);
 		while (true) {
-		//possibly need to make scanner > variable > compare since looping may be weird
 		System.out.println("Enter 1 to add a new contact, 2 to print all, 3 to search, 4 to save, 0 to exit: ");
-		Integer usrImp = imputScan.nextInt();
+		String usrImp = inputScan.nextLine();
+		//inputScan.close();//only 1 system in
 		
-		if (usrImp ==1) {
+		if (usrImp.equals("1")) {
 			//add new contact
-			Scanner nameScan = new Scanner(System.in);
+
+			//Scanner nameScan = new Scanner(System.in);
+			
 			System.out.println("enter the contact information, or newline if done:");
-			String nameImp = nameScan.nextLine();
+			
+			c1=new Contact(inputScan.nextLine());
+			String nameImp = inputScan.nextLine();
 			if(nameImp.equals("")) {
 				
 			}
 			else {
-				ab1.saveName(nameImp);
+				c1.saveName(nameImp);
 				while (true) {
 					System.out.println("enter the contact information, or newline if done:");
-					String infoImp = nameScan.nextLine();
+					String infoImp = inputScan.nextLine();
 					if(infoImp.equals("")) {
+						if (c1.getName().length()>1) {						
+							//c1.contactInfoAL 
+							a1.allContacts.add(c1);		
+						}
 						break;
 					}
 					else {
-						ab1.addContactInformation(infoImp);
+						c1.addContactInformation(infoImp);
+						
 						//add to arraylist
 					}
 					
@@ -123,32 +90,65 @@ public class AddressBook {
 			}
 		
 		}
-		else if(usrImp==2) {
+		else if(usrImp.equals("2")) {
 		//print all
-			System.out.println("two");
-		}
-		else if(usrImp==3) {
-		//search **needs to check for all contacts, name + info
-			Scanner searchScan = new Scanner(System.in);
-			System.out.println("enter the string to search for: ");
-			String searchImp = searchScan.nextLine();
-			if(ab1.nameMatches(searchImp.toLowerCase()).compareTo(true) == 0) {
-				System.out.println("match");
-			}
-			else {
-				System.out.println("no match found");
-			}
+			System.out.println(a1.allContacts.toString().replace("[", "").replace("]", ""));
 			
 		}
-		else if(usrImp==4) {
-		//save
+		
+		
+		else if(usrImp.equals("3")) {
+		//search **needs to check for all contacts, name + info
+			System.out.println("enter the string to search for: ");
+			try {
+				String searchImp = inputScan.nextLine();//user search
+				for (int i=0; i< a1.allContacts.size();i++) {
+				//if content in a1.allContacts matches user imput	
+				}
+				if(c2.nameMatches(searchImp.toLowerCase()).compareTo(true) == 0) {// needs to check all contacts
+					System.out.println("match");
+					System.out.println(c2.toString());
+				}
+				else {
+					System.out.println("no match found");
+				}
+			}
+			catch(NullPointerException e) {
+				c2.customException();
+			}		
 		}
-		else if(usrImp==0) {
+		
+		
+		else if(usrImp.equals("4")) {
+		//create file save
+		System.out.println("file name?");
+		String fileName= inputScan.nextLine();
+		File userFile = new File(".txt");
+		
+		try {
+			userFile.createNewFile();
+		} catch (IOException e) {
+			c2.customException();
+		}
+		try {
+			Scanner fReader = new Scanner(userFile);
+			PrintWriter wite= new PrintWriter(userFile);
+			wite.println(a1.allContacts.toString());
+			System.out.println("saved "+fileName);
+			fReader.close();
+			wite.close();
+		} catch (FileNotFoundException e) {
+			c2.customException();
+		}
+		}
+		
+		
+		else if(usrImp.equals("0")) {
 		//exit
-			imputScan.close();
+			inputScan.close();
 			break;
-	
 		}
 		}
 	}
+	
 }
