@@ -12,7 +12,7 @@ public class Employee extends Person {
 		return this.salary;
 	}
 	
-	public String toString(){//can be overridden
+	public String toString(){//can be overridden - needs to show salary too
 		//return name
 		super.toString();
 		return super.toString();
