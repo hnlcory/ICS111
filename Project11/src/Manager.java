@@ -3,19 +3,19 @@ public class Manager extends Employee {
 
 	String Department=null;
 	
-	public String saveDepartment(String departmentInput) {
+	public String saveDepartment(String departmentInput) {//save department name
 		this.Department = departmentInput;
 		return departmentInput;
 	}
 	
-	public String getDepartment() {
+	public String getDepartment() {//return just department
 		return this.Department;
 	}
 	
-	public String toString(){//can be overridden - needs to show salary and department
-		//return name
-		super.toString();
-		return super.toString();
+	public String toString(){//can be overridden 
+		//return name, salary, and department
+		String printout =super.toString()+" Department:"+Department;
+		return printout;
 	}
 	
 }

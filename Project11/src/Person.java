@@ -10,7 +10,7 @@ public class Person {
 			}
 
 	public String toString() {
-		//String getName(), which returns the name
+		//returns the name
 			return this.name;	
 		}
 	

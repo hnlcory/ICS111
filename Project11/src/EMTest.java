@@ -13,7 +13,7 @@ public class EMTest {
 		
 		System.out.println("Employee test:");
 		e1.saveName(exampleNameInput2);
-		System.out.println("saved name is: "+e1.toString());
+		
 		if (e1.nameMatches(exampleSearch2).equals(true)) {
 			System.out.println("search match");
 		}
@@ -22,20 +22,21 @@ public class EMTest {
 		}
 		e1.saveSalary(exampleSal);
 		System.out.println("saved sal: "+e1.getSalary());
+		System.out.println("toString results in: "+e1.toString());
 		
 		
 		System.out.println("Manager Test:");
 		m1.saveName(exampleNameInput1);
 		m1.saveDepartment("Sales");
 		System.out.println(m1.getDepartment());
-		System.out.println("saved name is: "+m1.toString());
+		
 		if (m1.nameMatches(exampleSearch1).equals(true)) {
 			System.out.println("search match");
 		}
 		else {
 			System.out.println("search name not found");
 		}
-		System.out.println(m1.toString());
+		System.out.println("toString results in: "+m1.toString());
 
 	}
 
