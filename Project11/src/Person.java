@@ -6,7 +6,7 @@ public class Person {
 	public String saveName(String contactName) {
 		//saves that string as the name of the contact
 			name = contactName;
-			return contactName;	
+			return name;	
 			}
 
 	public String toString() {
