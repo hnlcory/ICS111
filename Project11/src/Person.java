@@ -5,18 +5,18 @@ public class Person {
 	
 	public String saveName(String contactName) {
 		//saves that string as the name of the contact
-			name = contactName;
-			return name;	
+			this.name = contactName;
+			return this.name;	
 			}
 
 	public String toString() {
 		//String getName(), which returns the name
-			return name;	
+			return this.name;	
 		}
 	
 	public Boolean nameMatches(String search) {
 		//returns true if the lowercase version of the name contains the lowercase version of the search string
-			if(search.toLowerCase().contains(name.toLowerCase())) {
+			if(search.toLowerCase().contains(this.name.toLowerCase())) {
 				return true;
 			}
 			else {
