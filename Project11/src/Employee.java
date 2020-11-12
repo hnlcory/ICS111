@@ -3,7 +3,7 @@ public class Employee extends Person {
 	
 	int salary=0;
 	
-	public Integer saveSalary(int salaryInput) {//save salary
+	public Integer setSalary(int salaryInput) {//save salary
 		this.salary= salaryInput;
 		return salaryInput;
 	}

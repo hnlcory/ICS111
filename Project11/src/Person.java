@@ -3,7 +3,7 @@ public class Person {
 	
 	public String name;
 	
-	public String saveName(String contactName) {
+	public String setName(String contactName) {
 		//saves that string as the name of the contact
 			this.name = contactName;
 			return this.name;	

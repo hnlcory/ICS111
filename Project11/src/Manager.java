@@ -3,7 +3,7 @@ public class Manager extends Employee {
 
 	String Department=null;
 	
-	public String saveDepartment(String departmentInput) {//save department name
+	public String setDepartment(String departmentInput) {//save department name
 		this.Department = departmentInput;
 		return departmentInput;
 	}
