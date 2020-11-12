@@ -9,13 +9,9 @@ public class MyRectangle extends java.awt.Rectangle{
 	public Integer getPerimeter(){
 		int widthI=super.width;
 		int heightI=super.height;
-		
-		System.out.println(widthI);
-		System.out.println(heightI);
-	
 		widthI=widthI*2;
 		heightI=heightI*2;
-		int perimeter = (int)heightI+(int)widthI;
+		int perimeter = heightI+widthI;
 		return perimeter;
 	}
 	

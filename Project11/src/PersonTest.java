@@ -12,7 +12,7 @@ public class PersonTest {
 		String exampleSearch1 = "Cory", exampleSearch2= "Kaya";
 
 		
-		System.out.println("Contact test:");
+		System.out.println("--- Contact test ---");
 		p1.setName(exampleNameInput1);
 		System.out.println("saved name is: "+p1.toString());
 		
@@ -25,7 +25,7 @@ public class PersonTest {
 		
 		
 		
-		System.out.println("ContactP test:");
+		System.out.println("\n--- ContactP test ---");
 		cp1.setName(exampleNameInput2);
 		System.out.println("saved name is: "+cp1.toString());
 		if (cp1.nameMatches(exampleSearch2).equals(true)) {
