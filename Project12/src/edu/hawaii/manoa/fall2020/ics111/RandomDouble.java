@@ -39,8 +39,9 @@ public class RandomDouble implements Comparable<RandomDouble> {
 		for (int i = 0; i < array.length; i++) {
 			array[i]=new RandomDouble();
 		}
+		System.out.println("Unsorted:\n"+Arrays.toString(array).replace("[","").replace("]","")+"\n");
 		Arrays.sort(array);
-		System.out.println("Sorted Array:\n");
-		System.out.println(Arrays.toString(array).replace("[","").replace("]",""));
+		System.out.println("Sorted Array:\n"+Arrays.toString(array).replace("[","").replace("]",""));
+		
 	}
 }
