@@ -6,7 +6,6 @@ public class RandomDouble implements Comparable<RandomDouble> {
 	
 	private Double variable;// private instance variable
 	
-	
 	public RandomDouble(){// assigns a random double (from Math.random)
 		this.variable = Math.random();
 	}
@@ -31,7 +30,6 @@ public class RandomDouble implements Comparable<RandomDouble> {
 	public Double returnDouble() { //returns the random double in type double
 		return this.variable;
 	}
-	
 	
 	public static void main(String[] args) {
 		//creates and fills an array of 10 values of type RandomDouble, then sorts them using Arrays.sort, and finally prints the contents of the sorted array
