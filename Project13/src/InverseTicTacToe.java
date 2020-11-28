@@ -4,16 +4,24 @@ import java.awt.event.*;
 import java.util.Random;
 import java.awt.*;
 import java.awt.Graphics;
-public class InverseTicTacToe implements ActionListener {
+
+public class InverseTicTacToe  {
 	
 	Font f1 = new Font("Helvetica", Font.PLAIN, 18);
-	boolean playerTurn;
+	boolean playerTurn=false;//player or computer
+	boolean gameOn = false;//track if game is on
 	Random r = new Random();
 	JPanel title = new JPanel();//game title
 	JPanel gameSpots = new JPanel();//board
 	JLabel text = new JLabel();//text for top
 	JButton[] buttons = new JButton[9];//board buttons
 	JFrame window = new JFrame();//main window
+	mouseClicker m1 = new mouseClicker();//check for click
+	
+	JLabel square = new JLabel();
+	JLabel diamond = new JLabel();
+	
+	
 	
 	
 	
@@ -21,13 +29,26 @@ public class InverseTicTacToe implements ActionListener {
 		InverseTicTacToe i1 = new InverseTicTacToe();
 		i1.createBoard();
 		i1.turnName();
+		while (i1.gameOn == true) {//game here
+			if (i1.playerTurn ==true) {//player turn
+				
+				
+			}
+			else {//computer turn
+				int ranSpot = i1.r.nextInt(9-1+1)+1;
+				System.out.println(ranSpot);
+			}
+		}
+		
+		
 		// TODO Auto-generated method stub
 
 	}
 
 	
 	public void createBoard(){//creates board
-		window.setSize(480,640);
+		gameOn = true;
+		window.setSize(240,320);
 		window.setTitle("Tic-Tac-Toe");
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.getContentPane().setBackground(Color.DARK_GRAY);
@@ -39,35 +60,44 @@ public class InverseTicTacToe implements ActionListener {
 		text.setHorizontalAlignment(JLabel.CENTER);
 		text.setFont(f1);
 		
-		
+		title.setLayout(new BorderLayout());
+		title.setBounds(0,0,480,75);//x,y,width,height
+		title.add(text);
 		
 		
 		for (int i=0; i<9;i++) {//create buttons
 			buttons[i] = new JButton();
-			
+			buttons[i].addMouseListener(m1);
 			gameSpots.add(buttons[i]);
+			
 		}
 		
 		gameSpots.setLayout(new GridLayout(3,3));
 		gameSpots.setBackground(Color.BLACK);
+		
+		
 		window.add(gameSpots);
-		
-		title.setLayout(new BorderLayout());
-		title.setBounds(0,0,480,75);//x,y,width,height
-		title.add(text);
 		window.add(title,BorderLayout.NORTH);
-		
-		
-		
+
 		
 	}
 
+	
+	public void drawSquare(){
+		
+	}
+	
+	public void drawDiamond() {
+		
+	}
+	
+	
 	public void turnName(){
 		if (playerTurn= true) {
-			text.setText("Player's Turn");
+			text.setText("Player's Turn (Square)");
 		}
 		else {
-			text.setText("NPC's Turn");
+			text.setText("NPC's Turn (Diamond)");
 		}
 	}
 	
@@ -83,16 +113,24 @@ public class InverseTicTacToe implements ActionListener {
 		}
 	}
 	
-	public void actionPerformed(ActionEvent e) {//mouseClicked i think
-		// TODO Auto-generated method stub
-		
-	}
+	
 	
 	public void winCheck(){//winner/loser
 		
 	}
+
 	
-	
+	public class mouseClicker extends MouseAdapter{
+		
+		public void mousePressed(MouseEvent e) {
+		      System.out.println(e.getSource());
+		      System.out.println(e.getX()+", "+e.getY());
+		      System.out.println();
+		      ((JButton)e.getSource()).setText("X");
+		      
+		      
+		   }
+	}
 	
 	
 	
@@ -106,4 +144,3 @@ public class InverseTicTacToe implements ActionListener {
 	
 	
 }
-
